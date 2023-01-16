@@ -1,8 +1,8 @@
-cmake_minimum_required (3.14)
+cmake_minimum_required(VERSION 3.14)
 
 set(REPOSITORY_NAME "QXlsx")
 set(REPOSITORY_URL  "https://github.com/QtExcel/QXlsx.git")
-set(REPOSITORY_TAG  "577674fd8303f18f0a24db0da14e2417298b639c")
+set(REPOSITORY_TAG  "00380c3ffad1fad1fb63b1a244aa2864db1d3b8d")
 
 FetchContent_Declare(
     "${REPOSITORY_NAME}"
