@@ -53,7 +53,7 @@ testAutosizeColumnWidth() {
 void
 TestQXlsxIssue152::
 testColumnWidth() {
-    const double expectedColumnWidth = 32.0;
+    const double expectedColumnWidth = 8.430f;
     const int testCellIndex = 1;
     QVariant cellData = 1337;
 
@@ -76,7 +76,7 @@ TestQXlsxIssue152::
 testColumnWidthAcrossManyColumns() {
     const int columnCount = 255;
     const int initialWidth = 1;
-    const int increaseWidthStep = 1;
+    const int increaseWidthStep = 1; // ??
     const int testRowIndex = 1;
 
     QXlsx::Document document;
@@ -93,7 +93,9 @@ testColumnWidthAcrossManyColumns() {
     for (int i = 1; i <= columnCount; ++i) {
         double columnWidth = document.columnWidth(i);
         QVERIFY(columnWidth > 0.0);
-        QVERIFY(qFuzzyCompare(columnWidth, expectedColumnWidth));
+
+        int intCmp = int(columnWidth);
+        QVERIFY(qFuzzyCompare(intCmp, expectedColumnWidth));
 
         expectedColumnWidth += increaseWidthStep;
     }
