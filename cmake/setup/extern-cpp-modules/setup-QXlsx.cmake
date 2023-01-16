@@ -1,6 +1,8 @@
+cmake_minimum_required (3.14)
+
 set(REPOSITORY_NAME "QXlsx")
 set(REPOSITORY_URL  "https://github.com/QtExcel/QXlsx.git")
-set(REPOSITORY_TAG  "0461eac843358aec56c648ec929ca20da5822fdc")
+set(REPOSITORY_TAG  "577674fd8303f18f0a24db0da14e2417298b639c")
 
 FetchContent_Declare(
     "${REPOSITORY_NAME}"
@@ -17,3 +19,4 @@ add_subdirectory("${QXLSX_ROOT}" ${${REPOSITORY_NAME_TO_POPULATE}_BINARY_DIR})
 set(QXLSX_HEADERPATH "${QXLSX_ROOT}/header")
 target_include_directories(${PROJECT_NAME} PRIVATE "${QXLSX_HEADERPATH}")
 target_link_libraries(${PROJECT_NAME} PRIVATE ${REPOSITORY_NAME})
+
